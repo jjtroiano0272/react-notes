@@ -4,8 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { ThemeContext } from './ThemeProvider';
 import { useHotkeys } from 'react-hotkeys-hook';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import logo from '../image/react-logo.svg';
-
+import logo from '../assets/images/react-logo.svg';
 import $ from 'jquery';
 
 export default function Navbar({ user }) {

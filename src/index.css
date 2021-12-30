@@ -82,3 +82,33 @@ input.search-dark:focus {
   width: 2rem;
   height: auto;
 }
+
+.note-title {
+  overflow: hidden;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pane {
+  overflow-y: auto;
+  /* padding: 10px; */
+}
+
+.sidebar {
+  width: 20%;
+  height: 100vh;
+}
+
+.editor {
+  width: 80%;
+  height: 100vh;
+}
+
+@media (max-width: 576px) {
+  ReactMde {
+    /* set colors etc here */
+  }
+}

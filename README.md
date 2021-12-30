@@ -5,6 +5,9 @@
 - [ ] User login & mangement
 - [ ] A way of utilizing API data
 - [ ] Some sort of loading animation
+- [ ] Include a (?) with Markdown cheatsheet
+- [ ] localStorage -> DB post. Save users and their data with a DB
+- [ ] The editing tools (bold, italic, etc) should only slide out and display when it's on mouseover
 
 ## Things to look out for/Notes
 

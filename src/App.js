@@ -1,19 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Home from './components/Home';
 import { ThemeContext } from './components/ThemeProvider';
-import ReactTooltip from 'react-tooltip';
 import UserProfile from './components/UserProfile';
 
 export default function App() {

@@ -6,12 +6,8 @@ export default function Home(props) {
   return (
     <>
       <div className='container'>
-        <h1>
-          You're in: <strong>Home</strong>
-        </h1>
-        <hr />
+        <Main />
       </div>
-      <Main />
       <Footer />
     </>
   );
