@@ -7,10 +7,10 @@ import About from './components/About';
 import Home from './components/Home';
 import { ThemeContext } from './components/ThemeProvider';
 import UserProfile from './components/UserProfile';
+// import 'react-mde/lib/styles/css/react-mde-all.css';
 
 export default function App() {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
-
   const [data, setData] = useState();
 
   return (

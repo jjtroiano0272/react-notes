@@ -8,6 +8,9 @@
 - [ ] Include a (?) with Markdown cheatsheet
 - [ ] localStorage -> DB post. Save users and their data with a DB
 - [ ] The editing tools (bold, italic, etc) should only slide out and display when it's on mouseover
+- [ ] Light/dark styling throughout the components
+- [ ] Note title in the sidebar should be limited to whole words (whitespace separated) like 10 words, then append '...' to the end
+- [ ] Notepad displays under 'sidebar' if on mobile screen
 
 ## Things to look out for/Notes
 

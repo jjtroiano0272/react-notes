@@ -23,7 +23,6 @@ export default function Main(props) {
   function createNewNote() {
     const newNote = {
       id: nanoid(),
-      order: null,
       body: 'Please note that this website is still in development. As such this is a draft! (30 DEC 2021)',
     };
     setNotes((prevNotes) => [newNote, ...prevNotes]);
@@ -31,15 +30,23 @@ export default function Main(props) {
   }
 
   function updateNote(text) {
-    setNotes((oldNotes) =>
-      oldNotes.map((oldNote) => {
-        return oldNote.id === currentNoteId
-          ? { ...oldNote, order: 0, body: text }
-          : oldNote;
-      })
-    );
+    setNotes((prevNotes) => {
+      const updatedArr = [];
+      for (let i = 0; i < prevNotes.length; i++) {
+        const prevNote = prevNotes[i];
+        prevNote.id === currentNoteId
+          ? updatedArr.unshift({ ...prevNote, body: text })
+          : updatedArr.push(prevNote);
+      }
+
+      return updatedArr;
+    });
   }
-  console.log(notes);
+
+  function deleteNote(event, noteId) {
+    event.stopPropagation();
+    setNotes(notes.filter((note) => note.id !== noteId));
+  }
 
   function findCurrentNote() {
     return (
@@ -58,6 +65,7 @@ export default function Main(props) {
             currentNote={findCurrentNote()}
             setCurrentNoteId={setCurrentNoteId}
             newNote={createNewNote}
+            deleteNote={deleteNote}
           />
           {currentNoteId && notes.length > 0 && (
             <Editor currentNote={findCurrentNote()} updateNote={updateNote} />
