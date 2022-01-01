@@ -23,7 +23,7 @@ export default function Main(props) {
   function createNewNote() {
     const newNote = {
       id: nanoid(),
-      body: 'Please note that this website is still in development. As such this is a draft! (30 DEC 2021)',
+      body: '',
     };
     setNotes((prevNotes) => [newNote, ...prevNotes]);
     setCurrentNoteId(newNote.id);
@@ -59,18 +59,41 @@ export default function Main(props) {
   return (
     <div className='container'>
       {notes.length > 0 ? (
-        <Split sizes={[30, 70]} direction='horizontal' className='d-flex'>
-          <Sidebar
-            notes={notes}
-            currentNote={findCurrentNote()}
-            setCurrentNoteId={setCurrentNoteId}
-            newNote={createNewNote}
-            deleteNote={deleteNote}
-          />
-          {currentNoteId && notes.length > 0 && (
-            <Editor currentNote={findCurrentNote()} updateNote={updateNote} />
-          )}
-        </Split>
+        <>
+          {/* Alert that this site is in development */}
+          <div
+            className='alert alert-warning alert-dismissible fade show'
+            role='alert'
+          >
+            <strong>This website is in development</strong> As such, this is not
+            indicative of the final product.
+            <button
+              type='button'
+              className='btn btn-sm close position-absolute'
+              data-dismiss='alert'
+              aria-label='Close'
+            >
+              <span aria-hidden='true'>&times;</span>
+            </button>
+          </div>
+
+          <Split
+            sizes={[30, 70]}
+            direction='horizontal'
+            className='d-flex mb-5'
+          >
+            <Sidebar
+              notes={notes}
+              currentNote={findCurrentNote()}
+              setCurrentNoteId={setCurrentNoteId}
+              newNote={createNewNote}
+              deleteNote={deleteNote}
+            />
+            {currentNoteId && notes.length > 0 && (
+              <Editor currentNote={findCurrentNote()} updateNote={updateNote} />
+            )}
+          </Split>
+        </>
       ) : (
         <div className='d-flex flex-column min-vh-100 justify-content-center align-items-center'>
           <h1 className='lead'>You have no notes</h1>
